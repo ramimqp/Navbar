@@ -25,15 +25,57 @@
 .navbar ul li{
     display: inline-block;
     margin: 10px;
+    /* এটা না দিলে পুরো নেভবারের নিছে ইফেক্ট পরবে  */
+    position: relative;
 }
 .navbar ul li a{
+    
     color: white;
     text-decoration: none;
 
 }
 .logo{
+    border: 2px solid white;
+    padding: 2px;
+    /* box-shadow: 0 25px 20px -20px rgba(236, 17, 17, 0.83); */
+    border-radius: 50%;
     height:80px;
     width: 80px;
    /* border: 2px solid red; */
    /* i adding logo change  */
 }
+.navbar ul li a::after{
+    content: '';
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .5s;
+    height: 3px;
+    width: 0;
+}
+.navbar ul li a:hover::after{
+    width: 100%;
+}
+.main{
+    display: grid;
+    place-items: center;
+}
+/* কোনো কন্টেন্ট মধ্যে আনার জন্য পেরেন্ট এ যা দিতে হয়  */
+.content{
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: center;
+}
+.content h2{
+    text-transform: uppercase;
+    padding: 10px;
+    border: 10px solid red;
+    border-radius: 0 50px;
+    box-shadow: ;
+    display: inline-block;
+}
+
